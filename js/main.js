@@ -1,7 +1,13 @@
 $(document).ready(function(){
-  $('#container')
-    .find('.hot')
-    .children('.non-solid')
+  $('#snow')
+    .parent() // Parent to go up, children to go down
+    .find('.title')
     .addClass('highlight');
 
+    console.log($('#snow').closest('.temperature'));
 });
+
+
+
+
+// .parent() to go up, .children() to go down
