@@ -1,4 +1,4 @@
 $(document).ready(function(){
-  // The > character applies for the direct children, >> for second children
-  $('#container >>> .non-solid').addClass('highlight');
+  $('#container input[placeholder*=Name]').addClass('highlight');
+
 });
