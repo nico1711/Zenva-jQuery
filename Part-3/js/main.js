@@ -34,7 +34,8 @@ $(document).ready(function(){
   // Show the more info when clicked
   $('#container').on('click', '.more-info-link', function(event) {
     event.preventDefault();
-    $(this).parent().find('.more-info').toggle();
+    // toggle(100), slideToggle & fadeToggle are all toggle effects
+    $(this).parent().find('.more-info').fadeToggle(1000);
   });
 
 

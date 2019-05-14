@@ -14,6 +14,7 @@ body {
   padding: 8px;
   float: left;
   margin: 4px;
+  border-radius: 5px;
 }
 
 .item img {
