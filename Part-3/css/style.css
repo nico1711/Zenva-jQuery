@@ -1,0 +1,25 @@
+body {
+  background-color: #EEE;
+}
+
+#container {
+  padding: 12px;
+  margin: 12px;
+  height: 100%;
+}
+
+.item {
+  width: 200px;
+  background-color: #DDD;
+  padding: 8px;
+  float: left;
+  margin: 4px;
+}
+
+.item img {
+  width: 100%;
+}
+
+.item .name {
+  font-size: 24px;
+}
