@@ -35,7 +35,11 @@ $(document).ready(function(){
   $('#container').on('click', '.more-info-link', function(event) {
     event.preventDefault();
     // toggle(100), slideToggle & fadeToggle are all toggle effects
-    $(this).parent().find('.more-info').fadeToggle(1000);
+    $(this).parent().find('.more-info').slideToggle('slow');
+    // Animating the "more info" button
+    $(this)
+      .animate({"opacity": 0.5, "margin-left": 10}, 'fast')
+      .animate({"opacity": 1, "margin-left": 0}, 'fast')
   });
 
 
