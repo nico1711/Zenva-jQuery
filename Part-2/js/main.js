@@ -5,4 +5,9 @@ $(document).ready(function(){
       $('#feedback-message').text('Pleased to meet you, ' + name);
     });
 
+    $('a').on('click', function(event) {
+      event.preventDefault();
+      $('#feedback-message').text('That\'s fine');
+    });
+
 });
