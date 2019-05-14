@@ -1,3 +1,20 @@
+// Function to add an item
+function addItem(name, description, price, moreInfo) {
+  let html = '';
+  html += '<div class="item">'
+    html += '<div class="name">' + name + '</div>'
+    html += '<img src="assets/beach.jpg" alt="Beach">'
+    html += '<div class="description">' + description + '</div>'
+    html += '<div class="price">' + price + '</div>'
+    html += '<button class="item-add">Add to cart</button>'
+    html += '<button class="item-remove">Remove</button><br>'
+    html += '<a class="more-info-link" href="#">More Info</a>'
+    html += '<div class="more-info">' + moreInfo + '</div>'
+  html += '</div>'
+
+  $('#container').prepend(html);
+};
+
 $(document).ready(function(){
   // Adding an element with the Add button
   $('#button-create-item').on('click', function() {
@@ -42,8 +59,24 @@ $(document).ready(function(){
       .animate({"opacity": 1, "margin-left": 0}, 'fast');
   });
 
-  $.ajax('data/item.json', function(response) {
-    console.log(response);
-  });
+  // Using ajax to read the json file
+  $.ajax('data/item.json', {
+    dataType: 'json',
+    contentType: 'application/json',
+    cache: false
+  })
+    .done(function(response) {
+      let items = response.items;
 
-});
+      // Add each item to the html
+      items.forEach(function(item){
+        console.log(item);
+        addItem(item.name, item.description, item.price, item.moreInfo);
+      });
+    })
+    .fail(function(request, errorType, errorMessage) {
+      console.log(errorMessage);
+    })
+    .always()
+
+  });

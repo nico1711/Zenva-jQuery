@@ -1,0 +1,21 @@
+{
+  "items": [{
+    "id": 1000,
+    "name": "Santa Monica",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "price": 499,
+    "moreInfo": "Lorem ipsum dolor sit amet"
+  }, {
+    "id": 1001,
+    "name": "Recife",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "price": 499,
+    "moreInfo": "Lorem ipsum dolor sit amet"
+  }, {
+    "id": 1002,
+    "name": "Long Beach",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "price": 499,
+    "moreInfo": "Lorem ipsum dolor sit amet"
+  }]
+}
