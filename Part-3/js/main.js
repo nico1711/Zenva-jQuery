@@ -39,8 +39,11 @@ $(document).ready(function(){
     // Animating the "more info" button
     $(this)
       .animate({"opacity": 0.5, "margin-left": 10}, 'fast')
-      .animate({"opacity": 1, "margin-left": 0}, 'fast')
+      .animate({"opacity": 1, "margin-left": 0}, 'fast');
   });
 
+  $.ajax('data/item.json', function(response) {
+    console.log(response);
+  });
 
 });
