@@ -1,8 +1,9 @@
 $(document).ready(function(){
-  $('.box').on('click', function(){
+  $('.box').on('click','.box-button', function(){
     // 'this' calls the object that called the function
     // 'toggleClass' sets the class or removes it if it already has it
-    $(this).toggleClass('highlight');
+    $(this).parent().toggleClass('highlight');
+    console.log("hello");
   })
 });
 
