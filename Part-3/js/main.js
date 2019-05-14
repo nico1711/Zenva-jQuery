@@ -19,8 +19,8 @@ $(document).ready(function(){
       html += '<div class="price">499</div>'
       html += '<button class="item-add">Add to cart</button>'
       html += '<button class="item-remove">Remove</button><br>'
-      html += '<a href="#">More Info</a>'
-      html += '<div class="more info">Lorem ipsum dolor sit amet.</div>'
+      html += '<a class="more-info-link" href="#">More Info</a>'
+      html += '<div class="more-info">Lorem ipsum dolor sit amet.</div>'
     html += '</div>'
 
     $('#container').prepend(html);
@@ -30,4 +30,12 @@ $(document).ready(function(){
   $('#container').on('click', '.item-remove', function() {
     $(this).parent().remove();
   });
+
+  // Show the more info when clicked
+  $('#container').on('click', '.more-info-link', function(event) {
+    event.preventDefault();
+    $(this).parent().find('.more-info').toggle();
+  });
+
+
 });
