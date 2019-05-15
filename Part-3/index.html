@@ -7,11 +7,34 @@
   </head>
   <body>
     <div id="admin-container">
+      <label>New Items</label>
       <input id="input-create-item" type="text">
+      <button id="button-create-item">Add</button>
     </div>
-    <button id="button-create-item">Add</button>
+
     <div id="cart-container">
       $0
+    </div>
+    <div id="user-data">
+      <form id="cart-form" method="post" action="data/cartSubmit.json">
+        <label>Name</label>
+        <input name="name" type="text">
+        <br>
+        <label>Email</label>
+        <input name="email" type="text">
+        <br>
+        <label>Newsletter?</label>
+        <input name="wantNewsletter" id="newsletter-checkbox" type="checkbox" checked>
+        <br>
+        <select name="newsletterFrequency" id="newsletter-frequency">
+          <option>-</option>
+          <option selected>Weekly</option>
+          <option>Monthly</option>
+        </select>
+        <br>
+        <button id="submit-cart">Submit</button>
+      </form>
+      <div id="feedback-message"></div>
     </div>
     <div id="container">
       <!-- This is where the items will appear -->

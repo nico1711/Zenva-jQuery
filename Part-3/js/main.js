@@ -73,7 +73,6 @@ $(document).ready(function(){
 
       // Add each item to the html
       items.forEach(function(item){
-        console.log(item);
         addItem(item.name, item.description, item.price, item.moreInfo);
       });
     })
@@ -108,4 +107,36 @@ $(document).ready(function(){
     .always()
   });
 
+  // Listener to show & hide frequency depending on newsletter checkbox
+  $('#newsletter-checkbox').on('change', function() {
+    if ($(this).is(':checked')) {
+      $('#newsletter-frequency').fadeIn();
+    } else {
+      $('#newsletter-frequency').fadeOut();
+    };
+  });
+
+  // Triggers the checkbox change so it will start showing the select options
+  $('#newsletter-checkbox').trigger('change');
+
+  $('#cart-form').on('submit', function(event) {
+    // Prevents the Submit button to reload the page
+    event.preventDefault();
+
+    let data = {
+      form: $(this).serialize(),
+      price: cart
+    };
+    console.log(data);
+
+    $.ajax($(this).attr('action'), {
+      type: 'post',
+      data: data
+    })
+    .done(function(response) {
+      $('#feedback-message').text(response.message);
+
+    });
+
+  });
 });
