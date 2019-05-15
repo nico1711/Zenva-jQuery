@@ -28,3 +28,10 @@ body {
 .item .more-info {
   display: none;
 }
+
+#cart-container {
+  width: 100%;
+  background-color: #000;
+  color: #FFF;
+  padding: 12px;
+}

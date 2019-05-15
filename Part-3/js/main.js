@@ -1,3 +1,6 @@
+// Defining car variable starting at 0
+var cart = 0;
+
 // Function to add an item
 function addItem(name, description, price, moreInfo) {
   let html = '';
@@ -59,7 +62,7 @@ $(document).ready(function(){
       .animate({"opacity": 1, "margin-left": 0}, 'fast');
   });
 
-  // Using ajax to read the json file
+  // Using ajax to read the item.json file
   $.ajax('data/item.json', {
     dataType: 'json',
     contentType: 'application/json',
@@ -77,6 +80,32 @@ $(document).ready(function(){
     .fail(function(request, errorType, errorMessage) {
       console.log(errorMessage);
     })
-    .always()
+    .always();
 
+  // Listener to the Add to Cart button
+  $('#container').on('click', '.item-add', function() {
+    let id = $(this).parent().data('id');
+
+    // Using ajax to read the item.json file
+    $.ajax('data/addToCart.json', {
+      type: 'post',
+      data: { id: id },
+      dataType: 'json',
+      contentType: 'application/json'
+    })
+    .done(function(response) {
+      if (response.message === 'success') {
+        let price = response.price;
+
+        cart += price;
+
+        $('#cart-container').text('$' + cart);
+      };
+    })
+    .fail(function(request, errorType, errorMessage) {
+
+    })
+    .always()
   });
+
+});
